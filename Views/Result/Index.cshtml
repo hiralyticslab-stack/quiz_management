@@ -1,0 +1,76 @@
+﻿@model IEnumerable<QuizMgmt.Models.Result>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.uname's result</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.result_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.attempt_date)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.user_id)
+        </th>*@ 
+        @*<th>
+            @Html.DisplayNameFor(model => model.user_name)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.quiz_id)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.quiz_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.score)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.remarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.result_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.attempt_date)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.user_id)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.user_name)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.quiz_id)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.quiz_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.score)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.remarks)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
